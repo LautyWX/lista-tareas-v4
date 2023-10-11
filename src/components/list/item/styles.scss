@@ -1,0 +1,22 @@
+.item-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center ;
+    justify-content: space-between;
+    background-color: rgba(255,255,255,0.3);
+    padding:0.5rem;
+    border-radius: 4px;
+    width: 32rem;
+    max-width: 90vw;
+    box-sizing: border-box;
+
+    &.completed {
+        text-decoration: line-through;
+    }
+}
+.block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}

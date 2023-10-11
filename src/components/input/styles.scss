@@ -1,0 +1,19 @@
+.input-container {
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 4px;
+    color: #FFF;
+    display:flex;
+    justify-content: space-between;
+    padding:8px;
+    width: 32rem;
+    max-width: 90vw;
+    box-sizing: border-box;
+    position: -webkit-sticky; //safari e internet explorer
+    position: sticky;
+    top:0;
+    mix-blend-mode: difference;
+
+    .scrolled {
+        background-color: rgba(0,0,0,0.5);
+    }
+}
