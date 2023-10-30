@@ -29,21 +29,10 @@ function App() {
     )
     setListaTareas(tareasActualizadas)    
   }
-
-  //Theme Logic//
-  const [isDarkTheme,setTheme] = useState(true);
-  const changeTheme = () => {
-    setTheme(!isDarkTheme);
-  }
-  const renderTheme = () => {
-    isDarkTheme? 
-    document.body.classList.replace('light','Dark')
-    :document.body.classList.replace('Dark','Light');
-  }
   //Render//
   return (
     <div className="main-container">
-      {renderTheme()}
+      
       <Title />
       <Input
         addToListaTareas = {addToListaTareas}

@@ -6,10 +6,9 @@ body {
     flex-direction: column;
     align-items: center;
 
-    &.Dark {
+    
         background-color: Colors.$Negro;
         color: Colors.$Blanco;
-    }
     &.Light {
         background-color: Colors.$Blanco;
         color: Colors.$Negro;
