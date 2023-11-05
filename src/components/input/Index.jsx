@@ -3,6 +3,7 @@ import Button from './button/Index'
 import Text from './text/Index'
 import "./styles.scss"
 import { useState } from 'react'
+import { handleNewTarea } from '../../utils/taskManager'
 
 function Input({addToListaTareas}) {
   const [textInput,setTextInput] = useState("");
@@ -13,7 +14,7 @@ function Input({addToListaTareas}) {
       name: textInput,
       isCompleted: false
     }
-    addToListaTareas(newTarea)
+    handleNewTarea(newTarea)
   }
 
   return (

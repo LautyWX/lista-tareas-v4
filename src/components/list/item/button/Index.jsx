@@ -1,30 +1,19 @@
 import React from 'react'
 import "./styles.scss"
-import Copy from '@mui/icons-material/ContentPaste';
-import Share from '@mui/icons-material/Share';
+import Edit from '@mui/icons-material/Edit';
 import Delete from '@mui/icons-material/DeleteOutline';
+import { handleDelete,handleEdit } from '../../../../utils/taskManager';
 
-function ItemButton({removeTarea,id,iconType}) {
-  const handleDelete = () => {
-    removeTarea(id);
-  }
-  const handleCopy = () => {
-    navigator.clipboard.writeText("Hola Lauty");
-  }
-  const handleShare = () => {
-
-  }
+function ItemButton({id,iconType}) {
   
   const renderIcon = () => {
     switch(iconType){
-      case "copy": return <Copy onClick={handleCopy}/> ;break;
-      case "share": return <Share onClick={handleShare}/> ;break;
-      case "delete": return <Delete onClick={handleDelete}/> ;break;
+      case "edit": return <Edit onClick={() => handleEdit(id)}/> ;break;
+      case "delete": return <Delete onClick={()=> handleDelete(id)}/> ;break;
     }
   }
   return (
     <button 
-      
       className="Border"
     >{renderIcon()}</button>
   )

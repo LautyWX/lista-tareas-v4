@@ -5,7 +5,7 @@ import Checkbox from './checkbox'
 import './styles.scss'
 
 
-function Item({id,name,isCompleted,removeTarea,changeComplete}) {
+function Item({id,name,isCompleted,changeComplete}) {
   
   return (
     <div className={isCompleted? "item-container completed":"item-container"}>
@@ -14,9 +14,8 @@ function Item({id,name,isCompleted,removeTarea,changeComplete}) {
           <Name name={name} id={id}/>
         </span>
         <span className="block">
-          <ItemButton removeTarea={removeTarea} id={id} iconType={"copy" }/>
-          <ItemButton removeTarea={removeTarea} id={id} iconType={"share"} />
-          <ItemButton removeTarea={removeTarea} id={id} iconType={"delete"} />
+          <ItemButton id={id} iconType={"edit" }/>
+          <ItemButton id={id} iconType={"delete"} />
         </span>
     </div>
   )

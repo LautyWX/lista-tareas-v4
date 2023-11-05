@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './item/Index'
 import './styles.scss'
 
-function List({listaTareas,removeTarea,changeComplete}) {
+function List({listaTareas,changeComplete}) {
   const lista = listaTareas;
 
   const handleLista = () => {
@@ -14,7 +14,6 @@ function List({listaTareas,removeTarea,changeComplete}) {
             id={tarea.id}
             name={tarea.name}
             isCompleted={tarea.isCompleted}
-            removeTarea={removeTarea}
             changeComplete={changeComplete}
           />
         )

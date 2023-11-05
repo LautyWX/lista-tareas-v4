@@ -2,11 +2,24 @@ import "./App.scss";
 import Title from "./components/title/Index.jsx";
 import Input from "./components/input/Index";
 import List from "./components/list/Index";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import db from "./utils/firebase.js"
+import { onSnapshot, collection } from "firebase/firestore";
 
 function App() {
   //List Logic//
   const [listaTareas,setListaTareas] = useState([]);
+  //fetch para conseguir la lista de tareas desde firebase task-app
+  useEffect(
+    () =>
+      onSnapshot(
+        collection(db,"task"),
+        (snapshot) => {
+          setListaTareas(snapshot.docs.map((doc) => ({...doc.data(),id: doc.id})))
+        }
+      )
+  ,[])
+
   const addToListaTareas = (tarea) => {
     const tareasActualizadas = [tarea, ...listaTareas];
     setListaTareas(tareasActualizadas)
